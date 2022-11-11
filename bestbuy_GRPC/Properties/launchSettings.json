@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "bestbuy_GRPC": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5204;https://localhost:7039",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
