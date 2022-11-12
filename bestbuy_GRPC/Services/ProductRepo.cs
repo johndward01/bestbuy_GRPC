@@ -5,18 +5,18 @@ using Grpc.Core;
 using System.Data;
 
 namespace bestbuy_GRPC.Services;
-public class GreeterService : Greeter.GreeterBase
+public class ProductRepo : Greeter.GreeterBase
 {
-    private readonly ILogger<GreeterService> _logger;
+    private readonly ILogger<ProductRepo> _logger;
     private readonly IDbConnection _connection;
 
-    public GreeterService(ILogger<GreeterService> logger, IDbConnection connection)
+    public ProductRepo(ILogger<ProductRepo> logger, IDbConnection connection)
     {
         _logger = logger;
         _connection = connection;
     }
 
-    public IEnumerable<Product> GetProducts()
+    public override Task<IEnumerable<Product>> GetAllProducts()
     {
         return _connection.Query<Product>("SELECT * FROM bestbuy.products;");
     }

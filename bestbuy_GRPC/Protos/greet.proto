@@ -4,22 +4,25 @@ option csharp_namespace = "bestbuy_GRPC";
 
 package greet;
 
-// The greeting service definition.
 service ProductRepo {
-	rpc GetAllProducts (GetProducts) returns (IEnumerable<Product>);
+	rpc GetAllProducts (GetProductsRequest) returns (GetProductsReply);
 }
+
+message GetProductsRequest {
+	IEnumerable<Product> Products = new List<Product>()
+	{
+		new Product(){ Name = "GRPC PRODUCT TEST" }
+	};
+}
+
+message GetProductsReply {
+
+}
+
 
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
-}
-
-
-
-
-
-service GetProductsRequest {
-	
 }
 
 // The request message containing the user's name.
