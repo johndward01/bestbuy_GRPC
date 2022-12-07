@@ -9,10 +9,12 @@ service ProductRepo {
 }
 
 message GetProductsRequest {
-	IEnumerable<Product> Products = new List<Product>()
-	{
-		new Product(){ Name = "GRPC PRODUCT TEST" }
-	};
+	int ProductID = 1;
+	string Name = 2;
+	double Price = 3;
+	int CategoryID = 4;
+	bool OnSale = 5;
+	int StockLevel = 6;
 }
 
 message GetProductsReply {
